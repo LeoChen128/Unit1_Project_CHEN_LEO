@@ -12,10 +12,14 @@ public class Main {
         //obtain bill by user input
         System.out.println("Please enter the bill in dollars and cents: ");
         double bill = scan.nextDouble();
+        System.out.println("----------------------------------------------");
+
         //obtain tip amount by user input
         System.out.println("What is the tip percentage: ");
         double tip = scan.nextDouble() / 100;
         double totalTip = bill * tip;
+        System.out.println("----------------------------------------------");
+
         //obtain amount of people by user input
         System.out.println("Number of people: ");
         int totalPeople = scan.nextInt();
@@ -40,9 +44,15 @@ public class Main {
         double centConvert2 = (double) tipCentsInt / 100;
         double lastTipPer = tipInt + centConvert2;
 
-        //prints out the tip per person and total per person
+        //prints out the tip per person and total per person including prices for all people together
+        System.out.println("Total Bill amount: " + billFormat.format(totalBill));
+        System.out.println("----------------------------------------------");
+        System.out.println("Total Tip amount: " + billFormat.format(totalTip));
+        System.out.println("----------------------------------------------");
         System.out.println("Tip per person: " + billFormat.format(lastTipPer));
+        System.out.println("----------------------------------------------");
         System.out.println("Bill per person: " +  billFormat.format(lastBillPer));
+        System.out.println("----------------------------------------------");
         scan.close();
 
 
