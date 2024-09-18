@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         //converts to decimal format
-        DecimalFormat currency= new DecimalFormat("$ #,##0.00");
+        DecimalFormat billFormat = new DecimalFormat("$#,##0.00");
 
         //obtain bill by user input
         System.out.println("Please enter the bill in dollars and cents: ");
@@ -37,20 +37,13 @@ public class Main {
         int tipInt = (int) (tipPer);
         double decimalTip = tipPer - tipInt;
         int tipCentsInt = (int)((decimalTip * 100) + 0.50);
-
-        //test
-        System.out.println(tipCentsInt);
-
         double centConvert2 = (double) tipCentsInt / 100;
-
-        //test
-        System.out.println(centConvert2);
-
         double lastTipPer = tipInt + centConvert2;
 
-        System.out.println("Tip per person: $" + lastTipPer);
-        System.out.println("Bill per person: $" +  lastBillPer);
-
+        //prints out the tip per person and total per person
+        System.out.println("Tip per person: " + billFormat.format(lastTipPer));
+        System.out.println("Bill per person: " +  billFormat.format(lastBillPer));
+        scan.close();
 
 
     }
